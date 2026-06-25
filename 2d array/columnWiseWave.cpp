@@ -15,29 +15,16 @@ int main()
             cin>>arr[i][j];
         }
     }
-    //wave 1
-    for(int i=0; i<m;i++){
-        if(i%2==0){
-            for(int j=0; j<n;j++){
+    
+    //column wise wave
+    for(int j=0;j<n;j++){
+        if(j%2==0){
+            for(int i=0;i<m;i++){
                 cout<<arr[i][j]<<" ";
             }
         }
         else{
-            for(int j=n-1; j>=0;j--){
-                cout<<arr[i][j]<<" ";
-            }
-        }
-    }
-    cout<<"\n";
-    //wave 2
-    for(int i=m-1;i>=0;i--){
-        if(i%2==0){
-            for(int j=0;j<n;j++){
-                cout<<arr[i][j]<<" ";
-            }
-        }
-        else{
-            for(int j =n-1; j>=0;j--){
+            for(int i=m-1;i>=0;i--){
                 cout<<arr[i][j]<<" ";
             }
         }
