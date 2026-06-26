@@ -7,7 +7,7 @@ void change(int a[]){
     a[0]=9;
 }
 
-void change2D(int arr[3][3]){ //compulsory to give size 
+void change2D(int arr[3][3]){ //compulsory to give size else error aayega
     arr[0][0]=100;
 }
 int main()  
@@ -16,5 +16,7 @@ int main()
  cout<<arr[0][0]<<"\n";
  change2D(arr);
  cout<<arr[0][0]<<"\n";
+//  change(arr);    
+ cout<<arr[0][0];
 
 }
