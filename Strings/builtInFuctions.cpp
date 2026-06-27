@@ -30,4 +30,10 @@ int main()
     // cout<<str<<"\n";
     reverse(str.begin()+2, str.begin()+5);  //cde ko everse krna hai jo 2nd se 4th tk hai  
     cout<<str;
+
+    string s = "abcdef";
+    //s.substr(index,length)
+    cout<<s.substr(0);
+    cout<<s.substr(2);
+
 }
