@@ -24,16 +24,19 @@ int main()
     // cout<<s;
 
 
-    string str = "abcdef";  //0,1,2,3,4,5
-    cout<<str<<"\n";
-    // reverse(str.begin(),str.end());
+    // string str = "abcdef";  //0,1,2,3,4,5
     // cout<<str<<"\n";
-    reverse(str.begin()+2, str.begin()+5);  //cde ko everse krna hai jo 2nd se 4th tk hai  
-    cout<<str;
+    // // reverse(str.begin(),str.end());
+    // // cout<<str<<"\n";
+    // reverse(str.begin()+2, str.begin()+5);  //cde ko everse krna hai jo 2nd se 4th tk hai  
+    // cout<<str;
 
-    string s = "abcdef";
-    //s.substr(index,length)
-    cout<<s.substr(0);
-    cout<<s.substr(2);
+    // string s = "abcdef";
+    // //s.substr(index,length)
+    // cout<<s.substr(0);
+    // cout<<s.substr(2);
 
+    int x = 12345;
+    string s = to_string(x);
+    cout<<s.length();
 }
