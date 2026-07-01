@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void funB(int n);
+void funB(int n); //heads up calling nahi to error aayega funB not defined
 
 void funA(int n){
     if(n>0){
