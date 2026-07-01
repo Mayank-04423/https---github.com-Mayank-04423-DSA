@@ -15,7 +15,7 @@ int fib(int n){
     return s;
 }
 
-//using recursions
+//using recursions 
 int rfib(int n)
 {
     if(n<=1) return n;
@@ -24,7 +24,7 @@ int rfib(int n)
     }
 }
 
-// using memoization
+// using memoization -> saving value of recursive function taki firse operation na krna pade
 int F[10];
 int mfib(int n){
     if(n<=1){
@@ -34,6 +34,7 @@ int mfib(int n){
     else{
         if(F[n-2]==-1) F[n-2]=mfib(n-2);
         if(F[n-1]==-1) F[n-1]=mfib(n-1);
+        F[n]=F[n-2]+F[n-1];
         return F[n-2]+F[n-1];
     }
 }
