@@ -28,7 +28,7 @@ void disply(struct Node* temp){
         cout<<temp->data<<"->";
         temp= temp->next;
     }
-
+    cout<<"NULL";
 }
 int main() 
 {
