@@ -24,12 +24,32 @@ void create(int A[],int n){
     }
 }
 
+//display
+void display (struct Node* p){
+    while(p!=nullptr){
+        cout<<p->data<<"->";
+        p = p->next;
+    }
+    cout<<"NULL";
+}
+
 //searching 
 
-Node* Lsearch(struct Node*p,int key){
-    while(p!=0)
-    {if(key ==p->data)
+struct Node* Lsearch(struct Node*p,int key)
+{
+    struct Node* q;
+
+    while(p!=NULL)
+    {   
+        if(key ==p->data)
+       {
+        //to move the resultant node to front 
+        q->next = p->next;
+        p->next = first;
+        first = p;
         return p;
+       }
+        q=p;
         p=p->next;
     }
     return NULL;
@@ -45,13 +65,15 @@ Node* Rsearch(struct Node*p , int key){
 
 int main() 
 {
-    int A[]={2,3,3,4,40,5};
+    int A[]={2,16,8,4,40,5};
     create(A,6);
     
     struct Node* temp;
-    temp = Rsearch(first,40);
-    if(temp) cout<<"key is found :"<<temp->data<<" "<<temp;
+    temp = Lsearch(first,8);
+    if(temp) cout<<"key is found :"<<temp->data<<"\n";
     else cout<<"key not found";
+
+    display(first);
 
     return 0;
 }
