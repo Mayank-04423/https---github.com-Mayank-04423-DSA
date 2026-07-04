@@ -8,9 +8,10 @@ struct Node{
     //constuctor to create node and assign next ptr with data
     Node(int val,Node*nextptr = nullptr){
         data = val;
-        next = nullptr;
+        next = nextptr;
     }
 };
+
 
 
 Node* first = nullptr;
@@ -26,6 +27,8 @@ void create(int A[],int n){
     }
 }
 
+
+
 //display
 void display (struct Node* p){
     while(p!=nullptr){
@@ -34,6 +37,8 @@ void display (struct Node* p){
     }
     cout<<"NULL";
 }
+
+
 
 //searching 
 
@@ -57,6 +62,8 @@ struct Node* Lsearch(struct Node*p,int key)
     return NULL;
 }
 
+
+
 //insertion of element
 void insert(int pos, int x){
     if(pos == 0){
@@ -74,6 +81,39 @@ void insert(int pos, int x){
         p->next = new Node(x,p->next);
     }
 }
+
+
+
+//deleting a node 
+//for head 
+void deleteHead(){
+    if(first == nullptr) return ;
+
+    Node*p = first;
+    first = first -> next;
+    delete p;
+}
+
+void deleteNode(int pos){
+    if(pos == 0){
+        deleteHead();
+        return;
+    }
+
+    Node* p = first;
+    Node*q = nullptr;
+
+    for(int i = 0; i<pos && p; i++){
+        q = p;
+        p = p->next;
+    }
+    if(p){
+        q->next = p->next;
+        delete p;
+    }
+}
+
+
 
 Node* Rsearch(struct Node*p , int key){
     if(p==NULL)
@@ -94,9 +134,16 @@ int main()
     // else cout<<"key not found";
 
     insert(0,5);
-    insert(2,8);
+    insert(1,8);
+    insert(2,15);
+    insert(3,13);
+    insert(3,18);
 
     display(first);
+    cout<<"\n";
+    deleteNode(3);
+    display(first);
+
 
     return 0;
 }
