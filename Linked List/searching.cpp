@@ -25,6 +25,7 @@ void create(int A[],int n){
 }
 
 //searching 
+
 Node* Lsearch(struct Node*p,int key){
     while(p!=0)
     {if(key ==p->data)
@@ -34,6 +35,13 @@ Node* Lsearch(struct Node*p,int key){
     return NULL;
 }
 
+Node* Rsearch(struct Node*p , int key){
+    if(p==NULL)
+    return NULL;
+    if(key==p->data) return p;
+    return Rsearch(p->next,key);
+}
+
 
 int main() 
 {
@@ -41,7 +49,7 @@ int main()
     create(A,6);
     
     struct Node* temp;
-    temp = Lsearch(first,40);
+    temp = Rsearch(first,40);
     if(temp) cout<<"key is found :"<<temp->data<<" "<<temp;
     else cout<<"key not found";
 
