@@ -14,7 +14,7 @@ bool isValid(string s){
     if(ch =='('||ch =='{'||ch =='['){
         st.push(ch);
     }
-    else{
+    else if(ch == ')' || ch == '}' || ch == ']'){
         //case 1 : closing bracked found but stack is empty
         if(st.empty()) return false;
 
@@ -34,7 +34,7 @@ bool isValid(string s){
 
 int main() 
 {
-    string  test = "{[()]}";
+    string  test = "{([a+b]*[c+d])/e}";
     if(isValid(test)) cout<<"balanced paranthesis"<<"\n";
     else cout<<"unbalanced paranthesis"<<"\n";
     return 0;
