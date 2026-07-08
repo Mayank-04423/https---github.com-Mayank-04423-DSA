@@ -41,21 +41,33 @@ int* Q;
 
 int main() 
 {
-    circularQueue Q(5);
+   circularQueue Q(5);
+
+    cout << "--- Testing Enqueue (Filling it up) ---\n";
     Q.enqueue(10);
     Q.enqueue(20);
     Q.enqueue(30);
     Q.enqueue(40);
-    cout<<"full"<<"\n";
-    Q.enqueue(50);
+    
+    // This 5th element should fail because 1 slot must remain an empty buffer
+    Q.enqueue(50); 
 
-    Q.dequeue();
-    Q.dequeue();
-    Q.dequeue();
-    Q.dequeue();
-    cout<<"should be empty now"<<"\n";
-    Q.dequeue();
+    cout << "\n--- Testing Dequeue (Creating Space) ---\n";
+    Q.dequeue(); // Removes 10
+    Q.dequeue(); // Removes 20
 
+    cout << "\n--- Testing Circular Wrap-Around ---\n";
+    // Since we deleted two items, indexes 1 and 2 are open.
+    // These next two should wrap around and use index 0 and 1!
+    Q.enqueue(60); 
+    Q.enqueue(70); 
+
+    cout << "\n--- Emptying the remaining Queue ---\n";
+    Q.dequeue(); // Removes 30
+    Q.dequeue(); // Removes 40
+    Q.dequeue(); // Removes 60
+    Q.dequeue(); // Removes 70
+    Q.dequeue(); // Should say Queue is empty!
 
     return 0;
 }
