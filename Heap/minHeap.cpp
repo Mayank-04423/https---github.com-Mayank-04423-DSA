@@ -58,7 +58,7 @@ class minHeap{
             curr = smallest;
         }     
 
-    };
+    };  
     int getMax(){
         if(heap.empty()) return -1;
         return heap[0];
